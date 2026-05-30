@@ -1,0 +1,22 @@
+{
+  "name": "codecraft",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^25.9.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "private": true,
+  "type": "module",
+  "bin": {
+    "codecraft-build": "./index.ts"
+  },
+  "dependencies": {
+    "@clack/core": "^1.4.0",
+    "@clack/prompts": "^1.5.0",
+    "commander": "^15.0.0",
+    "figlet": "^1.11.0"
+  }
+}
