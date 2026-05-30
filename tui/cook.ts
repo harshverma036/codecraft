@@ -1,8 +1,8 @@
 import figlet from "figlet";
 import chalk from "chalk";
 import { select, isCancel } from "@clack/prompts";
-import { runPlanMode } from "../carft-modes/plan";
-import { runAgentMode } from "../carft-modes/agent";
+import { runAgentMode } from "../carft-modes/agent/agent";
+import { cliMode } from "../carft-modes/cli";
 
 const BANNER_FONT = "ANSI Shadow";
 const SHADOW = chalk.hex("#5b4d9e");
@@ -41,12 +41,12 @@ export async function runCook() {
     message: "Pick a mode to get started:",
     options: [
       {
-        label: "Agent",
-        value: "agent",
+        label: "Cli",
+        value: "cli",
       },
       {
-        label: "Plan",
-        value: "plan",
+        label: "Telegram",
+        value: "telegram",
       },
       {
         label: "Exit",
@@ -62,9 +62,9 @@ export async function runCook() {
   }
 
   // case based mode execution for agent and plan.
-  if (mode === "plan") {
-    await runPlanMode();
-  } else if (mode === "agent") {
+  if (mode === "cli") {
+    await cliMode();
+  } else if (mode === "telegram") {
     await runAgentMode();
   }
 }
