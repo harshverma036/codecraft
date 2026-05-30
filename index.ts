@@ -1,6 +1,7 @@
 #!/usr/bin/env bun
 
 import { Command } from "commander";
+import { runCook } from "./tui/cook";
 
 const program = new Command();
 
@@ -15,7 +16,7 @@ program
   .command("cook")
   .description("Codecraft start cooking...")
   .action(async () => {
-    console.log("Cooking started!");
+    await runCook()
   });
 
 await program.parseAsync(process.argv);
